@@ -1,0 +1,65 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "userData": [
+    {
+      "name": "abc",
+      "email": "abc@mail",
+      "mobile": "0123456789",
+      "address": "add",
+      "pincode": "123456",
+      "city": "city",
+      "state": "state",
+      "blood": "O+",
+      "id": 1
+    },
+    {
+      "name": "Ankit kumar",
+      "email": "ankit.1534.kumar@gmail.com",
+      "mobile": "8789303850",
+      "address": "patia",
+      "pincode": "751024",
+      "city": "bhubaneswar",
+      "state": "odisha",
+      "blood": "AB+",
+      "id": 2
+    },
+    {
+      "name": "sai kishan",
+      "email": "sai@mail",
+      "mobile": "9876543210",
+      "address": "patia",
+      "pincode": "751024",
+      "city": "bbs",
+      "state": "odisha",
+      "blood": "B+",
+      "id": 3
+    },
+    {
+      "name": "nandu",
+      "email": "monu@gmail.com",
+      "mobile": "1234567894",
+      "address": "rkl",
+      "pincode": "12345",
+      "city": "rkl",
+      "state": "odishi",
+      "blood": "O+",
+      "id": 4
+    }
+  ]
+}

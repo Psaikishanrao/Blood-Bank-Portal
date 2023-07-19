@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f14f4f;
+        }
+
+        #btn {
+            float: right;
+            margin: 1rem;
+            padding: 0.5rem;
+            border: 0.5rem solid blanchedalmond;
+            border-radius: 0.4rem;
+
+        }
+
+        h2 {
+            margin-top: 3rem;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #9f1e1e;
+        }
+
+        li {
+            float: right;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        button:hover {
+            background-color: black;
+            color: red;
+        }
+
+        #image {
+            width: 70px;
+            height: 70px;
+            margin: 3px;
+            padding: 3px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="navbar">
+
+        <li><a href="assign02.html"><button>Back</button></a></li>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUi_zW-HP_NujGe5gpU-WqYRPXh81NTIEDag&usqp=CAU"
+            alt="i" id="image">
+    </ul>
+    <h2 style='color:white;background-color:red;'>Compatible Blood Type Donors</h2>
+
+    <table>
+        <tr>
+            <th><b>Blood Type</b></th>
+            <th><b>Donate Blood To</b></th>
+            <th><b>Receive Blood From</b></th>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>A+</b></span></td>
+            <td>A+ AB+</td>
+            <td>A+ A- O+ O-</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>O+</b></span></td>
+            <td>O+ A+ B+ AB+</td>
+            <td>O+ O-</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>B+</b></span></td>
+            <td>B+ AB+</td>
+            <td>B+ B- O+ O-</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>AB+</b></span></td>
+            <td>AB+</td>
+            <td>Everyone</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>A-</b></span></td>
+            <td>A+ A- AB+ AB-</td>
+            <td>A- O-</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>O-</b></span></td>
+            <td>Everyone</td>
+            <td>O-</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>B-</b></span></td>
+            <td>B+ B- AB+ AB-</td>
+            <td>B- O-</td>
+        </tr>
+        <tr>
+            <td><span style="color: #961e1b;"><b>AB-</b></span></td>
+            <td>AB+ AB-</td>
+            <td>AB- A- B- O-</td>
+        </tr>
+    </table>
+    
+
+</body>
+
+</html>

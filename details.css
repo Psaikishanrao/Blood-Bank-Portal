@@ -1,0 +1,81 @@
+#register {
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  border: 1px solid;
+  background: rgb(42, 36, 38);
+  background-image: linear-gradient(#F6A09A, #8A1F1D);
+
+  color: aliceblue;
+}
+/* body{
+    background-image: url('https://img.freepik.com/premium-vector/donating-blood-donation-bag-blood-donor-hemolytic-transfusion-bank-save-patient-live-hematology-clinical-laboratory-analysis-patient-support-charity-volunteering_284092-2672.jpg?w=1380');
+  
+   background-repeat: no-repeat;
+    background-size: cover;
+   
+} */
+
+
+.view {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  border: 1px solid;
+}
+.view1{
+  display: block;
+  justify-content:flex-end;
+  text-align: center;
+  border: 1px solid;
+  width: 30%;
+  border-radius: 20px;
+  background-color: rgb(95, 117, 195);
+  color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+}
+
+/* appended data own details */
+.view-reg {
+  display: flex;
+  justify-content: center;
+  border: 1px solid;
+}
+/* view-reg view all registered donors */
+
+.div {
+  display: grid;
+  justify-content: center;
+  border: 1px solid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 100%;
+  width: auto;
+  /* grid-template-areas: 10px 10px 10px 10px; */
+  /* grid-area: 10px; */
+  grid-gap: 40px;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  transition: 1s;
+}
+/* div databse  */
+.div1 {
+  display: block;
+  justify-content: center;
+  border: 1px solid;
+  text-align: center;
+  border-radius: 20px;
+  background-image: linear-gradient(#e3675e, #a52d2b);
+  color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+/* appended data all details */
+.div1:hover {
+  transform: scale(1.1);
+}

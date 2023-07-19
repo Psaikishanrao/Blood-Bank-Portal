@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+
+  <div id="register">  <h1>You are Successfully Registered As A Donor</h1></div>
+   <div class="view"> <h1>View your details: <button style="font-size:large; color: rgb(6, 6, 6);" onclick="ownDetails()">Click</button></h1>
+   </div>
+    <div id="own"></div>
+    <div class="view-reg">
+    <h1>View all registered donors: <button style="font-size: large;color: rgb(6, 6, 6);" onclick="donorsData()">Click</button></h1> </div>
+    <div id="database"></div>
+</body>
+</html>
+<script>
+    let api= "http://localhost:3000/userData";
+    
+    async function ownDetails()
+    {
+        let name,email,mobile,address,pincode,city,state,blood;
+        let div= document.getElementById("own");
+        div.innerHTML="";
+        
+        let nameBlood= document.createElement("h2");
+        let contact= document.createElement("h3");
+        let add= document.createElement("h4");
+        let currEmail=localStorage.getItem("CurrentEmail");
+        let res= await fetch(api);
+        let data= await res.json();
+        let div1=document.createElement("div");
+    
+        data.forEach(element => {
+
+            if(element.email==currEmail)
+            {
+                name=element.name;
+                blood=element.blood;
+                mobile=element.mobile;
+                email=element.email;
+                address=element.address;
+                pincode=element.pincode;
+                city=element.city;
+                state=element.state;
+            }
+        });
+        nameBlood.innerText=`${name}: ${blood}`;
+        contact.innerText=`Contact : ${mobile}(${email})`;
+        add.innerText=`Address : ${address}, ${city}- ${pincode},${state}`;
+    
+        div.setAttribute('class','view');
+        div1.setAttribute('class','view1');
+        div1.append(nameBlood,contact,add);
+        div.append(div1);
+       
+    }
+    async function donorsData()
+    {
+        let div= document.getElementById("database");
+        div.innerHTML="";
+        let res= await fetch(api);
+        let data= await res.json();
+        data.forEach(element => {
+            let name,email,mobile,address,pincode,city,state,blood;
+            let div1=document.createElement("div");
+         
+            let nameBlood= document.createElement("h2");
+            let contact= document.createElement("h3");
+            let add= document.createElement("h4");
+                name=element.name;
+                blood=element.blood;
+                mobile=element.mobile;
+                email=element.email;
+                address=element.address;
+                pincode=element.pincode;
+                city=element.city;
+                state=element.state;
+                nameBlood.innerText=`${name}: ${blood}`;
+                contact.innerText=`Contact : ${mobile}(${email})`;
+                add.innerText=`Address : ${address}, ${city}- ${pincode},${state}`;
+                div.setAttribute('class','div');
+                div1.setAttribute('class','div1');
+                div1.append(nameBlood,contact,add);
+                div.append(div1);
+        
+        });
+    }
+</script>
+<!-- font-family: "Nunito", sans-serif;
+font-weight: 400; -->

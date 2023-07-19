@@ -1,0 +1,259 @@
+<!-- li a {
+
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 30px;
+    text-decoration: none;
+    justify-content: space-between;
+    padding-right: 40px;
+    padding-top: 30px;
+  } -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+</head>
+<style>
+    .name{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+     
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #9f1e1e;
+      }
+      
+      li {
+        float: right;
+      }
+      
+      li a {
+        display: block;
+    color: white;
+    text-align: center;
+    padding-left: 30px;
+    text-decoration: none;
+    justify-content: space-between;
+    padding-right: 40px;
+    padding-top: 30px;
+      }
+
+      button:hover {
+        background-color: black;
+        color: red;
+      }
+      #image{
+        width: 70px;
+        height: 70px;
+        margin: 3px;
+        padding: 3px;
+        border-radius: 3px;
+    }
+    body{
+        background: url(https://www.teamhealth.com/wp-content/uploads/2022/06/TH-13654-World-Blood-Donor-Day-Social-Graphics_ForApproval_Blog.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+   
+    
+    
+    @media(hover:hover)
+    {
+        button:hover{
+            color:orange;
+            background-color: black;
+        }
+    }
+    .container{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        width:650px;
+        background-color:beige;
+        border-radius: 1rem;
+    }
+
+    h1{
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .container td{
+        font-size: 16px;
+        margin: 15px 10;
+        padding: 5px;
+    }
+
+    .container input{
+        font-size: 16px;
+        padding: 15px 10px;
+        width: 70%;
+        border: 0;
+        border-radius: 5px;
+        outline:none;
+    }
+    .container button{
+        font-size: 10px;
+        font-weight: bold;
+        margin: 10px 0;
+        padding: 10px 15px;
+        width: 60px;
+        border-radius: 5px;
+        
+
+    }
+    .name{
+        margin: 3px;
+        padding: 5px;
+    }
+    .tab{
+        width: 500px;
+    }
+    @media(hover:hover)
+    {
+       td :hover{
+            
+            background-color:lightblue;
+        }
+    }
+    .field{
+        padding: 5px;
+        margin: 5px;
+    }
+    @media(max-width: 768px){
+       html{
+        font-size: 30%;
+       }
+    }
+   .btn{
+    display: flex;
+    justify-content: center;
+    margin:10px;
+    gap: 2px;
+
+    
+   }
+   @media(hover:hover)
+   {
+      btn:hover{
+           color:red;
+           background-color: black;
+       }
+   }
+   #i {
+    float: right;
+    
+    
+    border: 0.2rem solid blanchedalmond;
+    border-radius: 0.3rem;
+   }
+
+
+</style>
+<body>
+    
+    <ul class="navbar">
+
+        <li><a href="./assign02.html"><button id="i">Back</button></a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="assign02.html">Home</a ></li>
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUi_zW-HP_NujGe5gpU-WqYRPXh81NTIEDag&usqp=CAU" alt="i" id="image">
+        </ul>
+    <div class="container">
+    <h1 style="text-align: center;">Log In To Your Account</h1>
+    <fieldset class="name">
+        <table>
+            <tr>
+                <td>Email</td>
+                <td>:</td>
+                <td><input type="text" placeholder="Enter Your Email-Id" id="email"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:</td>
+                <td><input type="password" placeholder="Enter Your Password" id="pass"></td>
+            </tr>
+        </table>
+        <div class="btn">
+        <!-- <form action="./timetable.html"><button onclick="check()">Submit</button></form> -->
+        <button onclick="check()">Submit</button>
+        <button>Reset</button>
+        </div>
+    </fieldset>
+    </div>
+</body>
+</html>
+<script>
+    let api="http://localhost:3000/userData";
+   async function check() {
+
+        let email1=document.getElementById("email").value;
+        let pass1= document.getElementById("pass").value;
+        let user=JSON.parse(localStorage.getItem("data"));
+        let k=0;
+        let userEmail=false;
+        let userEpass=false;
+        user.forEach(element => {
+            if(element.Email==email1)
+            {
+                userEmail=true;
+               if(element.Pass==pass1)
+               {
+                userEpass=true;
+                localStorage.setItem("CurrentEmail",email1);
+               }
+            }
+        });
+        
+        if(userEmail==false)
+            {
+                alert("User Not Found!");
+                window.location.href(signin.html);
+                // window.location.assign("signin.html")
+            }
+            else if(userEpass==false)
+            {
+                alert("Invalid Password!");
+            }
+            else
+            {
+                let entry=false;
+                let res= await fetch(api);
+                data=await res.json();
+                data.forEach(element => {
+                    if(element.email==email1)
+                    {
+                        entry=true;
+                    }
+                });
+                if(entry)
+                {
+                window.location.assign("./details.html");
+                }
+                else{
+                    window.location.assign("./bloodportal.html")
+                }
+
+            }
+        
+    }
+</script>

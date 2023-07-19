@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   /* .name {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 30%;
+        margin-right: 30%;
+    
+
+    div {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }*/
+     
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: white;
+        background-size: cover;
+        color: #fff;
+
+    }
+    @media(hover:hover) {
+        button:hover {
+            color: orange;
+            background-color: black;
+        }
+    }
+
+    
+
+    .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 550px;
+        background-color: rgb(176, 27, 27);
+        border-radius: 0.2rem;
+
+
+    }
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .container td {
+        font-size: 20px;
+        margin: 15px 0;
+        padding: 5px;
+        color: black;
+
+    }
+
+    .container input {
+        font-size: 16px;
+        padding: 15px 10px;
+        width: 100%;
+        border: 0;
+        border-radius: 5px;
+        outline: none;
+
+    }
+
+    .container button {
+        font-size: 10px;
+        font-weight: bold;
+        margin: 10px 0;
+        padding: 10px 15px;
+        width: 60px;
+        border-radius: 5px;
+        overflow-x: auto;
+        justify-content: center;
+       /* margin-right: 10rem;*/
+
+    }
+
+    .name {
+        margin: 3px;
+        padding: 5px;
+    }
+
+    .tab {
+        width: 500px;
+    }
+
+    @media(hover:hover) {
+        td :hover {
+
+            cursor: pointer;
+        }
+    }
+
+    @media screen and(max-width:600px) {
+        .tab {
+            flex-direction: column;
+
+
+        }
+    }
+
+    @media(min-width:600px) {
+        .container {
+            font-size: 1rem;
+
+        }
+
+    }
+    #image {
+        width: 70px;
+        height: 70px;
+        margin: 3px;
+        padding: 3px;
+        border-radius: 0.5rem;
+    }
+
+    #btn {
+        float: right;
+        margin: 1rem;
+        padding: 0.5rem;
+        border: 0.5rem solid blanchedalmond;
+        border-radius: 0.2rem;
+
+    }
+    header {
+        border: 2px solid black;
+        margin: 2px;
+        background-color: rgb(176, 27, 27);
+    }
+   
+     #h{
+        margin-left: 12rem;
+     }
+    
+
+
+
+</style>
+
+<body>
+    <div>
+        <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUi_zW-HP_NujGe5gpU-WqYRPXh81NTIEDag&usqp=CAU"
+                alt="logo" id="image">
+               
+            <a href="assign02.html"><button id="btn">Back</button></a>
+        </header>
+    </div>
+    <div class="container">
+        <h1 >Create your Account</h1>
+        <fieldset class="name">
+            <Table class="tab">
+                <tr>
+                    <td>Mobile Number</td>
+                    <td>:</td>
+                    <td><input type="number" placeholder="10 digit mobile number" id="mob"></td>
+                </tr>
+                <tr>
+                    <td>Email ID</td>
+                    <td>:</td>
+                    <td><input type="text" placeholder="abc@mail" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>:</td>
+                    <td><input type="password" placeholder="Enter strong password" id="pass"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td>:</td>
+                    <td><input type="password" placeholder="Confirm your password" id="cpass"></td>
+                </tr>
+            </Table>
+            <div>
+               <button id="h" onclick="myfunc()">Submit</button> 
+                <button>reset</button>
+
+            </div>
+        </fieldset>
+        </div>
+</body>
+
+</html>
+<script>
+    let myfunc = () => {
+        let email = document.getElementById("email").value;
+        let mob = document.getElementById("mob").value;
+        let pass = document.getElementById("pass").value;
+        let cpass = document.getElementById("cpass").value;
+        if (mob == "") {
+            alert("Please enter a mobile no");
+        }
+        else if (mob.length != 10) {
+            alert("Please enter a valid 10 digit mobile number");
+        }
+        else if (email == "") {
+            alert("Please enter an email id");
+        }
+        else if (pass == "") {
+            alert("Please set a password");
+        }
+        else if (pass.length < 8) {
+            alert("Please set a stronger password of minimum 8 characters!");
+        }
+        else if (pass != cpass) {
+            alert("Password mismatch");
+        }
+        else {
+            let userData = {
+                Email: email,
+                Mob: mob,
+                Pass: pass,
+                Cpass: cpass,
+            }
+            let user = JSON.parse(localStorage.getItem("data")) || [];
+            let k = 0;
+            user.forEach(element => {
+                if (element.Email == userData.Email) {
+                    k = 1;
+                }
+
+            });
+            if (k == 1) {
+                alert("User already exist, kindly login.");
+                return (window.location.assign("./login.html"));
+            }
+            else {
+                user.push(userData);
+                localStorage.setItem("data", JSON.stringify(user));
+                window.location.assign("./signupsuccess.html");
+            }
+        }
+    }
+</script>

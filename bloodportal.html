@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Portal final</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        
+        .abc {
+            border: 5px solid;
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+            background-color: #F67B50;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            color: black;
+            border-radius: 10px;
+            /* color:aliceblue; */
+        
+        }
+
+        /* .up {
+            border: 5px solid;
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+            background-color: red;
+            margin-bottom: 10px;
+            margin-top: 10px;
+
+        }
+
+        .up2 {
+            border: 5px solid;
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+            background-color: red;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .up3 {
+             border: 5px solid; 
+            margin: auto;
+            width: 30%;
+            padding: 10px;
+            background-color: red;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        } */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            height: 87px;
+            background-color: red;
+        }
+
+        /* .btn btn-outline-danger {
+            display: inline-block;
+            padding: 10px 48px;
+            margin-bottom: 15px;
+            font-size: 19px;
+            font-weight: 400;
+            line-height: 2.429;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            margin-top: 15px;
+            class="btn btn-primary btn-lg"
+            class="btn btn-outline-danger
+        } */
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUi_zW-HP_NujGe5gpU-WqYRPXh81NTIEDag&usqp=CAU"
+                alt="logo" id="image">
+            <!-- <a href="assign02.html"><button style="margin-right: 10px;" id="btn">Back</button></a> -->
+            <!-- <a href="#" class="btn btn-info btn-lg">
+                  <span class="glyphicon glyphicon-log-out"></span> Log out
+                </a> -->
+           <a href="assign02.html"><button type="button" class="btn btn-primary btn-lg";style="margin-right: 10px; padding: 10px 48px; margin-bottom: 15px; margin-top: 15px; color: red; background-color: rgb(8, 8, 8); border-color: rgb(8, 8, 8);">Logout</button></a>
+
+        </header>
+
+    </div>
+
+    <!-- <div class="up">
+        <h1>Blood Bank Portal</h1>
+    </div> -->
+    <!-- <div class="up2">
+        <h2>Become a donor</h2>
+    </div> -->
+    <!-- <div class="up3">
+        <h3>Enter your details: </h3>
+    </div> -->
+    <div class="abc">
+        <h1>Blood Bank Portal</h1>
+        <h2>Become a donor</h2>
+        <h3>Enter your details: </h3>
+
+        <table>
+            <tr>
+                <td><p style="font-size:larger; ">Name</p></td>
+                <td>: </td>
+                <td><input type="text" placeholder="Enter your name" id="name"></td>
+            </tr>
+            <tr>
+                <td> <p style="font-size:larger;">Mobile Number</p></td>
+                <td>: </td>
+                <td id="mob"></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">Email Id</p> </td>
+                <td>:</td>
+                <td id="email"></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">Age</p> </td>
+                <td>:</td>
+                <td><input type="number" id="age"></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">Address</p> </td>
+                <td>: </td>
+                <td><textarea cols="30" rows="2" id="add"></textarea></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">Pin-Code</p> </td>
+                <td>:</td>
+                <td><input type="number" id="pin"></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">City</p> </td>
+                <td>: </td>
+                <td><input type="text" placeholder="Enter your city" id="city"></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">State</p> </td>
+                <td>: </td>
+                <td><input type="text" placeholder="Enter your state" id="state"></td>
+            </tr>
+            <tr>
+                <td><p style="font-size:larger;">Blood Group</p> </td>
+                <td>: </td>
+                <td><select id="blood">
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select></td>
+            </tr>
+
+        </table>
+        <!-- <button onclick="submit">Submit</button> -->
+        <button onclick="handleSubmit()">Submit</button>
+
+    </div>
+</body>
+
+</html>
+<script>
+
+
+
+    let currEmail = localStorage.getItem("CurrentEmail");
+    let currMob;
+    let user = JSON.parse(localStorage.getItem("data"));
+    user.forEach(element => {
+        if (currEmail == element.Email) {
+            currMob = element.Mob;
+        }
+    });
+    document.getElementById("mob").innerText = currMob;
+    document.getElementById("email").innerText = currEmail;
+
+    async function handleSubmit() {
+        let api = "http://localhost:3000/userData";
+        let blood = document.getElementById("blood").value;
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let add = document.getElementById("add").value;
+        let pin = document.getElementById("pin").value;
+        let city = document.getElementById("city").value;
+        let state = document.getElementById("state").value;
+        console.log(add, city, state);
+        if (name == "") {
+            alert("Please enter a name!");
+        }
+        else if (age == "") {
+            alert("Please enter your age!");
+        }
+        else if (age < 18) {
+            alert("You are a minor and not eligible for blood donation!");
+        }
+        else if (add == "") {
+            alert("Please enter your address!");
+        }
+        else if (pin == "") {
+            alert("Please enter your pincode!");
+        }
+        else if (city == "") {
+            alert("Please enter your city!");
+        }
+        else if (state == "") {
+            alert("Please enter your state!");
+        }
+        else {
+
+            let obj = {
+                name: name,
+                email: currEmail,
+                mobile: currMob,
+                address: add,
+                pincode: pin,
+                city: city,
+                state: state,
+                blood: blood
+            };
+            console.log(obj);
+            let res = await fetch(api, {
+                method: "POST",
+                body: JSON.stringify(obj),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            console.log(obj);
+            window.location.assign("./details.html");
+
+        }
+    }
+
+</script>
